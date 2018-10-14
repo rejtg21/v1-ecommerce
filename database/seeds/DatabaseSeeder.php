@@ -12,7 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $seedForDevelopment = [
-            // DefaultUserAdminSeeder::class,
+            DefaultCurrencySeeder::class,
+            DefaultUserAdminSeeder::class,
             DefaultCustomerSeeder::class,
             FakeProductTypeSeeder::class,
             FakeProductSeeder::class
