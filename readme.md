@@ -1,65 +1,79 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# V1 Ecommerce Practice App
+A simple application using Laravel 5.7
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Prerequisite
+- Composer
+- NPM
+- MySQL
+- PHP 7+
 
-## About Laravel
+## Setup
+- Install the laravel dependencies by running this command.
+```
+composer install
+```
+- Install NPM Packages used in this project by running this command.
+```
+npm install
+```
+***Note: If you encounter any issues with `node-sass`, please consider this solution https://github.com/sass/node-sass/issues/2345 . it only occurs on Node v10+***
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+- Ensure to create a database provided in your `.env` or rename it to your preferred empty database.
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=yourdbnamehere
+DB_USERNAME=dbusername
+DB_PASSWORD=dbpassword
+```
+- After successfully setup your database. Please run our migration by this command.
+```
+php artisan migrate
+```
+- Upon completion of the migration we need to fill it up with our Default data and Fake Data by running:
+```
+php artisan db:seed
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+After that setup we are good to go.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+## Running The Application.
+There are two types in running the application.
 
-## Learning Laravel
+### 1) Using `XAMPP` Apache
+- Transfer the whole application folder to the `htdocs` in your XAMPP directory.
+- Then access it as `localhost/<projectFolder>/public` since the `index.php` is in the public folder.
+- it should display the `Home` page which shows the `list` of products.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+### 2) Inside the Application (on any location)
+- Open a `cmd` or `terminal` go to the `root folder` of the application.
+- Then run `php artisan serve --port <portNumber>` to any port you desired.
+- It will generate a url and port, run it in the browser.
+- it should display the `Home` page which shows the `list` of products.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+## Features in Application.
+#### Home
+- :heavy_check_mark: List of Product
+  - :x: Tab of product types
+- :x: Purchase Product
+- :x: Customer Transaction History
+#### Admin
+- :x: Login 
+- :heavy_check_mark: Product Management
+  - :heavy_check_mark: Adding of Product
+  - :x: Edit of Product
+  - :x: Delete of Product 
+- :x: User Admin Management (CRUD)
+- :x: Customer Information Management (CRUD)
+- :x: Product Type Management (CRUD)
+- :x: Product Sales
+- :x: Pending Product Purchase Information
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Other Ready Setup
+Ready setup but still on going
+- Dynamic currency support with exchange rates (could also use API)
+- Translation Ready
+- Different Timezone Ready
+- Customer Pending Purchases
+- Transaction History
