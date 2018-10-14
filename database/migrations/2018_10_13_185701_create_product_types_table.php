@@ -20,7 +20,7 @@ class CreateProductTypesTable extends Migration
             $table->string('created_at');
             $table->string('updated_at');
             $table->integer('created_by');
-            $table->integer('updated_by');
+            $table->integer('updated_by')->nullable();
         });
     }
 

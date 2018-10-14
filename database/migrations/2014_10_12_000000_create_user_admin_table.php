@@ -13,15 +13,15 @@ class CreateUserAdminTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_admin', function (Blueprint $table) {
+        Schema::create('user_admins', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('email', 100)->unique();
             $table->string('password');
             $table->rememberToken();
             $table->string('created_at');
-            $table->string('updated_at');
-            $table->string('deleted_at');
+            $table->string('updated_at')->nullable();
+            $table->string('deleted_at')->nullable();
         });
     }
 
@@ -32,6 +32,6 @@ class CreateUserAdminTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_admin');
+        Schema::dropIfExists('user_admins');
     }
 }

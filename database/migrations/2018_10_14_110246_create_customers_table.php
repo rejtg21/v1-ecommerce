@@ -20,8 +20,8 @@ class CreateCustomersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('created_at');
-            $table->string('updated_at');
-            $table->string('deleted_at');
+            $table->string('updated_at')->nullable();
+            $table->string('deleted_at')->nullable();
         });
     }
 
