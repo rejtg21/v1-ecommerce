@@ -1,4 +1,6 @@
 {
     "/dist/js/home-app.js": "/dist/js/home-app.js",
-    "/dist/css/home-app.css": "/dist/css/home-app.css"
+    "/dist/js/admin-app.js": "/dist/js/admin-app.js",
+    "/dist/css/home-app.css": "/dist/css/home-app.css",
+    "/dist/css/admin-app.css": "/dist/css/admin-app.css"
 }

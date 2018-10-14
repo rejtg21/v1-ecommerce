@@ -30,4 +30,9 @@ Route::namespace('Admin')->prefix('admin')->group(function() {
     // we make it look like translation came from a javascript file
     Route::get('/translations.js', 'AdminController@translation');
     Route::get('/config.js', 'AdminController@config');
+    
+    //products
+    Route::get('/products', 'ProductController@get');
+    Route::get('/products/{id}', 'ProductController@show');
+    Route::post('/products', 'ProductController@store');
 });

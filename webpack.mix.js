@@ -12,11 +12,15 @@ const mix = require('laravel-mix');
  */
 
 mix.react('resources/js/home/home-app.js', 'public/dist/js')
-    // .react('resources/js/admin/admin-app.js', 'public/dist/js')
-    // .sass('resources/sass/app.scss', 'public/dist/css')
     .styles([
         'node_modules/bootstrap/dist/css/bootstrap.min.css'
     ], 'public/dist/css/home-app.css')
+    //admin
+    .react('resources/js/admin/admin-app.js', 'public/dist/js')
+    .styles([
+        'node_modules/bootstrap/dist/css/bootstrap.min.css',
+        'node_modules/react-table/react-table.css'
+    ], 'public/dist/css/admin-app.css')
     .webpackConfig({
         resolve: {
             alias: {
