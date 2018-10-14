@@ -11,6 +11,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $seedForDevelopment = [
+            // DefaultUserAdminSeeder::class,
+            DefaultCustomerSeeder::class,
+            FakeProductTypeSeeder::class,
+            FakeProductSeeder::class
+        ];
+
+        // add condition here if for production
+        $toBeSeeded = $seedForDevelopment;
+        
+        $this->call($toBeSeeded);
     }
 }
