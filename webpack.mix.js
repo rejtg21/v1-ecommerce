@@ -11,9 +11,10 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css')
-   .webpackConfig({
+mix.react('resources/js/home/home-app.js', 'public/dist/js')
+    // .react('resources/js/admin/admin-app.js', 'public/dist/js')
+    .sass('resources/sass/app.scss', 'public/dist/css')
+    .webpackConfig({
         resolve: {
             alias: {
                 Shared: path.resolve(__dirname, 'resources/assets/js/shared')
