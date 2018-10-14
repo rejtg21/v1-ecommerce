@@ -19,7 +19,7 @@ class Prompt {
         };
         
         // override default options
-        return custom(defaultOptions, options)
+        return this.custom(defaultOptions, options)
     }
 
     error(message, options) {
@@ -34,7 +34,7 @@ class Prompt {
         };
     
         // override default options
-        return custom(defaultOptions, options)
+        return this.custom(defaultOptions, options)
     }
 
     warning(message, options) {
@@ -48,7 +48,7 @@ class Prompt {
             confirmButtonColor: '#59c9e7'
         };
 
-        return custom(defaultOptions, options)
+        return this.custom(defaultOptions, options)
     }
 
     show(message, options) {
@@ -65,7 +65,7 @@ class Prompt {
             cancelButtonText: this.translation.button.no,
         };
     
-        return custom(defaultOptions, options)
+        return this.custom(defaultOptions, options)
     }
 
     custom(defaultOptions, options) {
@@ -78,4 +78,4 @@ class Prompt {
     }
 }
 
-export default Prompt;
+export default new Prompt;

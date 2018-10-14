@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Models\Product;
+use App\Models\ProductType;
+use App\Models\Currency;
 
 class ProductController extends Controller
 {
     public function get(Request $request)
     {
         $lists = Product::get();
-        logger('lists ');
         // $pages = 
         return compact('lists');//, 'pages');
     }
@@ -24,6 +25,8 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        logger('saving - - -');
+        logger($request->all());
         $product = new Product;
         $product->name = $request->name;
         $product->description = $request->description;
@@ -36,6 +39,18 @@ class ProductController extends Controller
         $product->save();
 
         $message = trans('app/admin.success.save');
+
+        return compact('product', 'message');
+    }
+
+    public function getCurrencies()
+    {
+        return Currency::get(['id', 'symbol']);
+    }
+    
+    public function getTypes()
+    {
+        return ProductType::get(['id', 'name']);
     }
 
     private function _getCreator()

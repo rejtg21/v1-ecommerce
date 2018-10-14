@@ -11,7 +11,7 @@ namespace App\Services;
     public static function translation() 
     {
         $data = [
-            'propmt' => trans('app/general/prompt')
+            'prompt' => trans('app/general/prompt')
         ];
 
         return $data;

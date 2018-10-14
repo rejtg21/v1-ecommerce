@@ -35,4 +35,8 @@ Route::namespace('Admin')->prefix('admin')->group(function() {
     Route::get('/products', 'ProductController@get');
     Route::get('/products/{id}', 'ProductController@show');
     Route::post('/products', 'ProductController@store');
+
+    
+    Route::get('/product/currencies', 'ProductController@getCurrencies');
+    Route::get('/product/types', 'ProductController@getTypes');
 });

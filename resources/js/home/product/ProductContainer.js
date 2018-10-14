@@ -14,7 +14,6 @@ class ProductContainer extends React.Component {
 
         this.translation = window.translations.home.product;
         
-        this.showProductList.bind(this);
     }
     
     componentDidMount() {
@@ -26,7 +25,8 @@ class ProductContainer extends React.Component {
             //per product create a card 
             // temporary the image will be all the same
             let subtitle = `${product.currency.symbol} ${product.price}`;
-            if(product.discounted) {
+            if(product.discount) {
+                console.log('discounted?');
                 // need to translate
                 subtitle = (
                     <p>

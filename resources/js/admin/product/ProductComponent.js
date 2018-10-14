@@ -3,6 +3,7 @@ const translation = window.translations.admin.product;
 import React from 'react';
 
 import ProductContainer from './ProductContainer';
+import {Button} from 'reactstrap';
 
 const ProductComponent = () => {
     return (

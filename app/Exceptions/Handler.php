@@ -46,6 +46,14 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if($exception instanceof NotFoundHttpException){
+            $message = trans('error.404');
+            return response()->json($message);
+        } else if ($exception instanceof \PDOException) {
+            $message = 'Internal Server Error.';
+            return response()->json(compact('message'), 500);
+        }
+
         return parent::render($request, $exception);
     }
 }
