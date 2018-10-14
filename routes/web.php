@@ -15,19 +15,17 @@
 Route::get('/', function() {
     return redirect('/home');
 });
-
-Route::namespace('Home')->group(function() {
-    Route::get('/home', 'HomeController@index');
+Route::namespace('Home')->prefix('home')->group(function() {
+    Route::get('/', 'HomeController@index');
     // we make it look like translation came from a javascript file
-    Route::get('/home/translations.js', 'HomeController@translation');
-    Route::get('/home/config.js', 'HomeController@config');
+    Route::get('/translations.js', 'HomeController@translation');
+    Route::get('/config.js', 'HomeController@config');
 });
 
 //admin
-
-Route::namespace('Admin')->group(function() {
-    Route::get('/admin', 'AdminController@index');
+Route::namespace('Admin')->prefix('admin')->group(function() {
+    Route::get('/', 'AdminController@index');
     // we make it look like translation came from a javascript file
-    Route::get('/admin/translations.js', 'AdminController@translation');
-    Route::get('/admin/config.js', 'AdminController@config');
+    Route::get('/translations.js', 'AdminController@translation');
+    Route::get('/config.js', 'AdminController@config');
 });

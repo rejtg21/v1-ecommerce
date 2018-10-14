@@ -13,7 +13,7 @@ const mix = require('laravel-mix');
 
 mix.react('resources/js/home/home-app.js', 'public/dist/js')
     // .react('resources/js/admin/admin-app.js', 'public/dist/js')
-    .sass('resources/sass/app.scss', 'public/dist/css')
+    // .sass('resources/sass/app.scss', 'public/dist/css')
     .webpackConfig({
         resolve: {
             alias: {
