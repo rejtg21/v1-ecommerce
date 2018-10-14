@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('discount');
             $table->integer('product_type_id')->unsigned();
             $table->string('created_at');
-            $table->string('updated_at');
+            $table->string('updated_at')->nullable();
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
         });

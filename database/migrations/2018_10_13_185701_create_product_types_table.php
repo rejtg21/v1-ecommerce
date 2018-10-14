@@ -18,7 +18,7 @@ class CreateProductTypesTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('created_at');
-            $table->string('updated_at');
+            $table->string('updated_at')->nullable();
             $table->integer('created_by');
             $table->integer('updated_by')->nullable();
         });
