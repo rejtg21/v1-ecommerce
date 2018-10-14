@@ -15,6 +15,11 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_order_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('product_id')->unsigned();
+            $table->decimal('price', 10, 2);
+            $table->tinyInteger('discount');
             $table->string('created_at');
         });
     }
