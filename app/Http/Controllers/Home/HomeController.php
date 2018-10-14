@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Home;
+
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
 use App\Services\GeneralResourceService;
+
 
 class HomeController extends Controller
 {
@@ -18,12 +21,12 @@ class HomeController extends Controller
     {
         $generalTranslation = GeneralResourceService::translation();
 
-        $data = [
+        $data = json_encode([
             'general' => $generalTranslation,
             'home' => trans('app/home')
-        ];
+        ]);
 
-        $translations = 'window.translations = ' + json_encode($data) + ';';
+        $translations = "window.translations = {$data} ;";
 
         return response($translations)->withHeaders([
             'Content-type', 'text/javascript'

@@ -1,3 +1,3 @@
 module.exports = {
-    axios: require('./bootstrap/axios.config')
+    axios: require('./bootstrap/axios.config').default
 };

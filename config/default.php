@@ -16,5 +16,10 @@ return [
         'name' => 'Juan Dela Cruz',
         'email' => 'juandelacruz@any.com',
         'password' => 'default',
+    ],
+    'currency' => [
+        'id' => 1,
+        'name' => 'Philippine Peso',
+        'symbol' => 'PHP'
     ]
 ];

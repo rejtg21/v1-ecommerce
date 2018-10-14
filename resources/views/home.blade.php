@@ -8,13 +8,13 @@
     <title>@lang('app/home.page.title')</title>
 
     <!-- Fonts -->
-    <link href="{{asset('dist/css/app.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('dist/css/home-app.css')}}" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div id = "homeContent">
 
     </div>
   </body>
-  <script type="text/javascript" src="{{ url('home/translation.js') }}"></script>
-  <script type="text/javascript" src="{{asset('dist/js/app.js')}}"></script>
+  <script type="text/javascript" src="{{ url('home/translations.js') }}"></script>
+  <script type="text/javascript" src="{{asset('dist/js/home-app.js')}}"></script>
 </html>

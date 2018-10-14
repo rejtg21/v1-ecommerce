@@ -13,5 +13,13 @@ return [
     'head' => [
         'title' => 'Welcome to Shop It!',
         'description' => 'We have anything you want here. Shop now!'
+    ],
+    'product' => [
+        'button' => [
+            'purchase' => [
+                'title' => 'Click to purchise this product',
+                'name' => 'Purchase'
+            ]
+        ]
     ]
 ];

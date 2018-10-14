@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Prompt from 'Shared/prompt';
+import Prompt from '../prompt';
 
 function AxiosConfig() {
     if (!(this instanceof AxiosConfig)) return new AxiosConfig();
@@ -24,7 +24,7 @@ function setDefaultHeaders() {
     // if we have specified meta header csrf so that we don't need to declare it everytime we create a request
     let token = document.head.querySelector('meta[name="csrf-token"]');
 
-    token ? window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content
+    token ? axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content
      : console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
@@ -56,4 +56,4 @@ function showError(message) {
     Prompt.error(message);
 }
 
-module.exports = AxiosConfig();
+export default AxiosConfig();

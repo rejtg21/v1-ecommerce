@@ -20,6 +20,8 @@ Route::namespace('Home')->prefix('home')->group(function() {
     // we make it look like translation came from a javascript file
     Route::get('/translations.js', 'HomeController@translation');
     Route::get('/config.js', 'HomeController@config');
+    //products
+    Route::get('/products', 'ProductController@get');
 });
 
 //admin

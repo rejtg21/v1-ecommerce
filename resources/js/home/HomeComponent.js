@@ -1,18 +1,20 @@
-const translation = windows.translation.home;
+const translation = window.translations.home;
 
-import ProductComponent from './product/ProductComponent';
+import React from 'react';
+
+import ProductContainer from './product/ProductContainer';
 
 const HomeComponent = () => {
     return (
-      <div  class = "container"> 
-        <div class = "d-flex justify-content-center">
-          <h1>{translation.head.title}')</h1>
+      <div  className = "container"> 
+        <div className = "d-flex justify-content-center">
+          <h1>{translation.head.title}'</h1>
         </div>
-        <div class = "row">
+        <div className = "row">
           <p>{translation.head.description}</p>
         </div>
-        <hr class="clearfix"></hr>
-        <ProductComponent />
+        <hr className="clearfix"></hr>
+        <ProductContainer />
       </div>
     );
 }

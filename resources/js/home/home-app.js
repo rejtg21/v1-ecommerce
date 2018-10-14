@@ -1,3 +1,5 @@
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -8,9 +10,11 @@ const mainElement = document.querySelector('#homeContent');
 if(!mainElement) 
     console.error('couldnt find home component');
 
+import Store from './store';
+
 import Home from './HomeComponent';
 
 ReactDOM.render(
-    <Provider store={store}> <Home /> </Provider>,
+    <Provider store={Store}><Home /></Provider>,
     mainElement
 );
