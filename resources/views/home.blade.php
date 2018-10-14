@@ -11,19 +11,10 @@
     <link href="{{asset('dist/css/app.css')}}" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div id = "homeContent" class = "container"> 
-      <div class = "d-flex justify-content-center">
-        <h1>@lang('app/home.head.title')</h1>
-      </div>
-      <div class = "row">
-        <p>@lang('app/home.head.description')</p>
-      </div>
-      <hr class="clearfix">
+    <div id = "homeContent">
 
-      <div class = "row">
-          
-      </div>
     </div>
   </body>
+  <script type="text/javascript" src="{{ url('home/translation.js') }}"></script>
   <script type="text/javascript" src="{{asset('dist/js/app.js')}}"></script>
 </html>

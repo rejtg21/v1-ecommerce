@@ -6,15 +6,11 @@ import { Provider } from 'react-redux';
 const mainElement = document.querySelector('#homeContent');
 
 if(!mainElement) 
-    return console.error('couldnt find home component');
+    console.error('couldnt find home component');
 
-const HomeApp = () => {
-    return (
-        
-    )
-}
+import Home from './HomeComponent';
 
 ReactDOM.render(
-    <Provider store={store}> <HomeApp /> </Provider>,
+    <Provider store={store}> <Home /> </Provider>,
     mainElement
 );
