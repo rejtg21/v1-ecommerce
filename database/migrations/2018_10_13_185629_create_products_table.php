@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->decimal('price', 10, 2);
-            $table->tinyInteger('discount', 3);
+            $table->tinyInteger('discount');
             $table->integer('product_type_id')->unsigned();
             $table->string('created_at');
             $table->string('updated_at');
